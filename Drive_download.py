@@ -45,6 +45,9 @@ response = service.files().list(q=query).execute()
 files = response.get("files")
 nextPageToken = response.get("nextPageToken")
 print(response)
+
+## Not always required but this basically checks in case there's multiple
+## pages in the folder
 while nextPageToken:
     response = service.files().list(q=query).execute()
     files.extend(response.get("files"))
