@@ -17,6 +17,12 @@ import re
 import pandas as pd
 
 def ExtensionExtractor(mime = None):
+    ## The book1.xlsx file is basically an excel file which contains every possible
+    ## MIME Types in the third column and their relevant extension formats in the first
+    ## Here, when I get the files as a response from the API it contains the MIME type
+    ## which is stored in a dictionary alongside alot of other infos but we can't convert
+    ## the MIME type to a downloadable link hence we are reformatting it
+    
     df = pd.read_excel('Book1.xlsx')
     result = dict(zip(df.iloc[:,3], df.iloc[:,1]))  # 3rd column as key, 1st as value
     return result[mime]
