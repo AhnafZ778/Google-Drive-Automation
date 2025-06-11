@@ -39,6 +39,8 @@ service = Create_Service(ClIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
 ## To Retrieve the files sent from the Drive API via a Query
 
+## I still need to properly understand how the query and response works for the Google.py file
+## will explain later
 Folder_ID = "1MiPEQsJue-FZ4I2wOXSysdvfSm803Swl"
 query = f"parents='{Folder_ID}'"
 response = service.files().list(q=query).execute()
