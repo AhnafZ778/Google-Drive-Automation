@@ -26,6 +26,8 @@ def ExtensionExtractor(mime = None):
     df = pd.read_excel('Book1.xlsx')
     result = dict(zip(df.iloc[:,3], df.iloc[:,1]))  # 3rd column as key, 1st as value
     return result[mime]
+## For the secret file you're going to need to create a Google Cloud console
+## https://www.youtube.com/watch?v=wJ6WC0G8w4o watch this video to know how
 
 ClIENT_SECRET_FILE = "client_secret_GoogleCloudDemo.json"
 API_NAME = "drive"
